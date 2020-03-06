@@ -1,0 +1,40 @@
+{
+  "name": "retro-server",
+  "version": "1.0.0",
+  "description": "Server HTTP pour API REST",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "server",
+    "http",
+    "api",
+    "rest"
+  ],
+  "author": "Lyes Moungla",
+  "license": "ISC",
+  "dependencies": {
+    "admin-bro": "^1.6.6",
+    "admin-bro-expressjs": "^0.4.0",
+    "admin-bro-sequelizejs": "^0.3.3",
+    "async": "^3.1.1",
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "core-util-is": "^1.0.2",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.0",
+    "jquery": "^3.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "module_name": "^1.0.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1"
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="style.css" type="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">    
+             <div class="col-md-8 offset-md-2">
+ 
+                   
+               <div class="card">
+                    <div class="card-header">
+                            <h2 style="text-align:center;"> Modifier votre histoire</h2>		 
+                            <div class="card-body">
+
+               <form enctype="multipart/form-data"> 
+                      
+                       
+                                   <div class="form-group">
+                                         
+
+                                         <label for="bio">Nouvelle Histoire:</label>
+
+                                        <textarea id="bio" rows="5" cols="75"></textarea>
+
+
+                             <button id="submit" type="submit" class="btn btn-primary">Envoyer</button>
+                           </form>
+
+                           <img src="img/lyester.png">
+
+
+
+                        </div>
+                        </div>
+                        </div>
+             </div>
+        </div>
+    </div>  
+            <style>
+            
+            #affiche{
+                border: 1px solid black;
+            }
+            html,body{
+                background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+                background-size: cover;
+                background-repeat: repeat;
+                height: 100%;
+                font-family: 'Numans', sans-serif;
+                }
+
+                .card{
+                    text-align: center;
+                }
+
+
+                            
+            </style>
+
+    <div class="container wall" style="text-align: center;">
+        <div class="row">
+                <div class="col-md-8 offset-md-2">
+
+    <div class="results" id="results"></div>
+
+</div>
+
+</div>
+</div>
+
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#submit').click(function(e) {
+            e.preventDefault();
+            $.ajax({
+                method: 'PUT',
+                headers: {"Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTgyNjM0NDgzLCJleHAiOjE1ODI2MzgwODN9.N7rXhpHnfOO2JeyQqjfDxTkjIE9OiEpsipuATHqRunE"},
+                dataType: 'json',
+                data: {
+                    bio: $('#bio').val()
+                },
+         
+
+                url: 'http://localhost:8060/api/users/me',
+                success: function (result) {
+                    alert("success");
+                },
+                error: function (result) {
+                    alert("error");
+                }
+            });
+        });
+    });
+
+
+    
+
+
+</script>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+<style>
+
+body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+.card{
+    margin: 10px;
+}
+.card-body{
+    text-align:left;
+    display: inline-block;
+}
+
+.card-footer{
+    height:70px;
+}
+
+.btn{
+    margin: 20px;
+    align-items: center;
+}
+
+img{
+    height: 50px;
+    width: 70px;
+    float:right;
+}
+
+</style>
